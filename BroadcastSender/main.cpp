@@ -21,7 +21,7 @@ int main()
       return -1;
    }
 
-   std::cout << "Enter ip address or DNS address: ";
+   std::cout << "Enter broadcast ip address: ";
    std::cin >> ipAddress;
 
    std::cout << "Enter port: ";
