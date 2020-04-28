@@ -48,7 +48,10 @@ bool BroadcastSender::setBroadcastSettings(const char* address, const uint16_t p
    bool rV = true;
 
    char t = 1;
-   rV = ::setsockopt(this->socketId, SOL_SOCKET, SO_BROADCAST, &t, sizeof(t));
+   if (::setsockopt(this->socketId, SOL_SOCKET, SO_BROADCAST, &t, sizeof(t)) != 0)
+   {
+      rV = false;
+   }
 
    if(rV != false)
    { 
